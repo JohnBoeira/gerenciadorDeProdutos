@@ -3,7 +3,8 @@ import { IProduct } from "./shared/model/product.model";
 
 @Component({
     selector: 'gp-products',
-    templateUrl: './product-list.component.html'
+    templateUrl: './product-list.component.html',
+    styleUrls: ['./shared/styles/product-list.component.css']
 })
 
 export class ProductListComponent{
