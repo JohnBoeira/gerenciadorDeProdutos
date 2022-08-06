@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./shared/model/product.model";
 
 @Component({
@@ -7,7 +7,8 @@ import { IProduct } from "./shared/model/product.model";
     styleUrls: ['./shared/styles/product-list.component.css']
 })
 
-export class ProductListComponent{
+export class ProductListComponent implements OnInit{
+
     pageTitle: string = 'Lista de produtos';
     imageWidth: number = 50;
     imageMargin: number = 2;
@@ -65,6 +66,10 @@ export class ProductListComponent{
             "imageUrl": "assets/images/xbox-controller.png"
         }
     ];
+
+    ngOnInit(): void {
+        console.log('Inicializado')
+    }
 
     toggleImage(): void{
         this.showImage = !this.showImage;
