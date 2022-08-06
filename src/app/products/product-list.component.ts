@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { IProduct } from "./shared/model/product.model";
 
 @Component({
     selector: 'gp-products',
@@ -11,7 +12,7 @@ export class ProductListComponent{
     imageMargin: number = 2;
     showImage: boolean = false;
     filterValue: string= 'Cart';
-    products: any[] = [
+    products: IProduct[] = [
         {
             "productId": 1,
             "productName": "Leaf Rake",
