@@ -13,7 +13,19 @@ export class ProductListComponent implements OnInit{
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    filterValue: string= 'Cart';
+
+    filterdProducts: IProduct[] = [];
+
+    private _listFilter: string = '';
+
+    get listFilter(): string{
+        return this._listFilter;
+    }
+    set listFilter(value: string){
+        this._listFilter = value;
+        this.filterdProducts = this.filterProducts(value);
+    }
+
     products: IProduct[] = [
         {
             "productId": 1,
@@ -73,5 +85,10 @@ export class ProductListComponent implements OnInit{
 
     toggleImage(): void{
         this.showImage = !this.showImage;
+    }
+
+    private filterProducts(value: string){
+        value = value.toLocaleLowerCase();
+        return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().includes(value))
     }
 }
