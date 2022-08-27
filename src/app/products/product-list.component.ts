@@ -87,6 +87,10 @@ export class ProductListComponent implements OnInit{
         this.showImage = !this.showImage;
     }
 
+    public onRatingClick(message: string): void{
+        this.pageTitle = 'Lista de produtos' + message;
+    }
+
     private filterProducts(value: string){
         value = value.toLocaleLowerCase();
         return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().includes(value))
