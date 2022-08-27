@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit{
     imageMargin: number = 2;
     showImage: boolean = false;
 
-    filterdProducts: IProduct[] = [];
+    filteredProducts: IProduct[] = [];
 
     private _listFilter: string = '';
 
@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit{
     }
     set listFilter(value: string){
         this._listFilter = value;
-        this.filterdProducts = this.filterProducts(value);
+        this.filteredProducts = this.filterProducts(value);
     }
 
     products: IProduct[] = [
@@ -80,7 +80,7 @@ export class ProductListComponent implements OnInit{
     ];
 
     ngOnInit(): void {
-        console.log('Inicializado')
+        this.filteredProducts = this.products;
     }
 
     toggleImage(): void{
