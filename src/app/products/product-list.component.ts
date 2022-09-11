@@ -4,7 +4,6 @@ import { IProduct } from "./shared/model/product.model";
 import { ProductService } from "./shared/services/product.service";
 
 @Component({
-    selector: 'gp-products',
     templateUrl: './product-list.component.html',
     styleUrls: ['./shared/styles/product-list.component.css']
 })
